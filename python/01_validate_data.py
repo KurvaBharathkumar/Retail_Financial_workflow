@@ -12,7 +12,7 @@ if not DATA_PATH.exists():
         "from MySQL Workbench to this location."
     )
 
-df = pd.read_csv()
+df = pd.read_csv("financial_performance.csv")
 required = {
     "transaction_id", "transaction_date", "customer_id", "customer_segment",
     "city", "product_id", "product_name", "category", "quantity",
