@@ -1,7 +1,7 @@
 from pathlib import Path
 import pandas as pd
 
-ROOT = Path(financial_performance.csv).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[1]
 DATA_PATH = ROOT / "data" / "retail_analysis.csv"
 OUT_DIR = ROOT / "outputs" / "validation"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -12,7 +12,7 @@ if not DATA_PATH.exists():
         "from MySQL Workbench to this location."
     )
 
-df = pd.read_csv("financial_performance.csv")
+df = pd.read_csv(__file__)
 required = {
     "transaction_id", "transaction_date", "customer_id", "customer_segment",
     "city", "product_id", "product_name", "category", "quantity",
